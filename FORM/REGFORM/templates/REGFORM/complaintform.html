@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width", initial-scale=1, shrink-to-fit="no">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title> Complaint Form</title>
+
+    </head>
+
+    <body>
+        <nav class="navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/"> Developer Group 9</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/">Home <span class="sr-only">(Current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/guidance">Guidance</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/pakistancases">Pakistan Cases</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/worldwidecases">Worldwide Cases </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/registrationform">Registration form</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/complaintform">Complaint form</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+
+        <div class="container">
+            <h2 class="text-center my-3">
+                Complaint Form
+            </h2>
+            <form action="http://127.0.0.1:8000/REGFORM/complaintform" method=POST>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email Address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="phone" class="form-control" id="phone" name="phone" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Complaint</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name='desc' rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">Submit</button>
+
+            </form>
+        </div>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    </body>
+</html>
