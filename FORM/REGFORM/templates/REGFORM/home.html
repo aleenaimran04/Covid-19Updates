@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   
@@ -7,17 +6,63 @@
         <meta name="viewport" content="width=device-width", initial-scale=1, shrink-to-fit="no">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        {% load static %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'REGFORM/style.css' %}">
+
 
         <title> Covid-19 Live Updates </title>
 
+        <style>
+            body, html {
+              height: 100%;
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            .bg-image {
+              /* The image used */
+              background-image: url("templates/REGFORM/pic.jpg");
+              
+              /* Add the blur effect */
+              filter: blur(8px);
+              -webkit-filter: blur(8px);
+              
+              /* Full height */
+              height: 100%; 
+              
+              /* Center and scale the image nicely */
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            
+            /* Position text in the middle of the page/image */
+            .bg-text {
+              background-color: rgb(0,0,0); /* Fallback color */
+              background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+              color: white;
+              font-weight: bold;
+              border: 3px solid #f1f1f1;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 2;
+              width: 80%;
+              padding: 20px;
+              text-align: center;
+            }
+            </style>
+
+
     </head>
-    <body >
+    <body  style="background-color: lightgray;">
     
         <nav class="navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/"> Developer Group 9</a>
+            <a class="navbar-brand" href="http://127.0.0.1:8000/REGFORM/"> Developer Group 9</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,22 +72,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/">Home <span class="sr-only">(Current)</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/aboutcovid19">About Covid-19</a>
+                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/guidance">Guidance</a>
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/symptom">Symptoms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/precaution">Precautions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/treatment">Treatment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/vaccine">Vaccine</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="https://datastudio.google.com/embed/u/0/reporting/1PLVi5amcc_R5Gh928gTE8-8r8-fLXJQF/page/R24IB">Pakistan Cases</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/worldwidecases">Worldwide Cases </a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/registrationform">Registration form</a>
-                </li>
+               
 
                 <li class="nav-item">
                     <a class="nav-link" href="http://127.0.0.1:8000/REGFORM/complaintform">Complaint form</a>
@@ -50,8 +102,19 @@
             </ul>
         </div>
         </nav>
+
+        <div class="bg-image"></div>
+
+        <div class="bg-text">
+          <h1 style="font-size:50px">Covid-19 Updates</h1>
+          <p>Here you can find all information regarding Covid-19</p>
+        </div>
+          
+    
+    </body> 
+
         
-        
-        </body>   
+          
+
         </html>
         

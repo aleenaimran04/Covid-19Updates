@@ -2,28 +2,28 @@ from django.db.models.fields import PositiveIntegerField
 from django.http import response
 from django.shortcuts import render, HttpResponse
 from .models import registration, complaint
-from django.http.response import JsonResponse
-from .serializer import registrationserializer,complaintserializer
-from rest_framework import serializers
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.parsers import JSONParser
-import io
 
-from REGFORM import serializer
 
 # Create your views here.
 
 def home(request):
     return render(request, 'REGFORM/home.html')
 
-def guidance(request):
-    return render(request, 'REGFORM/guidance.html')
+def aboutcovid19(request):
+    return render(request, 'REGFORM/aboutcovid19.html')
+
+def symptoms(request):
+    return render(request, 'REGFORM/symptom.html')
+def precaution(request):
+    return render(request, 'REGFORM/precaution.html')
+def treatment(request):
+    return render(request, 'REGFORM/treatment.html')
+def vaccine(request):
+    return render(request, 'REGFORM/vaccine.html')
 
 def pakistancases(request):
     return render(request, 'REGFORM/pakistancases.html')
-    
-def worldwidecases(request):
-    return render(request, 'REGFORM/worldwidecases.html')
+
 
 def registrationform(request):
     if request.method=="POST":
@@ -51,27 +51,6 @@ def complaintform(request):
         ins1.save()
     return render(request, 'REGFORM/complaintform.html')
 
-@csrf_exempt
-def createapi(request):
-    if request.method=="POST":
-        stream=io.BytesIO(request.body)
-        data=JSONParser().parse(stream)
-        serializer=registrationserializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            msg={'success':'data created'}
-        return JsonResponse(msg,safe=False)
-
-
-def CreateApi(request):
-    if request.method=="POST":
-        stream=io.BytesIO(request.body)
-        data=JSONParser().parse(stream)
-        serializer=complaintserializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            msg={'success':'data created'}
-        return JsonResponse(msg,safe=False)
 
     
 

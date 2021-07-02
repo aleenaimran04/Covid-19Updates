@@ -1,0 +1,17 @@
+#bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    background-size: 100%;
+}
+::-webkit-input-placeholder { /* Webkit */
+    background-size: 100%;
+}
+:-ms-input-placeholder { /* IE */
+    background-size: 100%;
+}
